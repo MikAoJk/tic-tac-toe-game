@@ -17,8 +17,12 @@ jobs:
       - run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      - name: Export static files
+        run: npm run export
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
+      - name: Deploy🚀
+        uses: JamesIves/github-pages-deploy-action@4.3.3
         with:
           branch: gh-pages
-          folder: build
+          folder: out
