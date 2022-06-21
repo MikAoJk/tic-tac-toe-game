@@ -30,3 +30,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Idea project files
+*.iml
+.idea/
