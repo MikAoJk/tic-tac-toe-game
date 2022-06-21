@@ -1,12 +1,14 @@
 {
   "name": "tic-tac-toe-game",
   "version": "0.1.0",
+  "homepage": "https://mikaojk.github.io/tic-tac-toe-game",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "next": "12.1.6",
