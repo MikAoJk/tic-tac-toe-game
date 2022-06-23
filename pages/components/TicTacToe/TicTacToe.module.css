@@ -25,7 +25,7 @@
     font-weight: 900;
 }
 
-.video_game_button2 {
+.video_game_button {
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -47,29 +47,6 @@
     height: 48px;
 }
 
-.video_game_button2:hover {
+.video_game_button:hover {
     background-color: #1db954;
-}
-
-.video_game_button {
-    text-shadow: 1px 1px pink, -1px -1px maroon;
-    line-height: 1.5em;
-    text-align: center;
-    display: inline-block;
-    width: 4.5em;
-    height: 4.5em;
-    border-radius: 50%;
-    background-color: red;
-    box-shadow: 0 0.2em maroon;
-    color: red;
-    margin: 5px;
-    background-image: linear-gradient(to left top, pink 3%, red 22%, maroon 99%);
-    cursor: pointer;
-    padding-left: 5px;
-}
-
-.video_game_button:active {
-    box-shadow: none;
-    position: relative;
-    top: 0.2em;
 }

@@ -38,7 +38,7 @@ const TicTacToe = () => {
         if (isCPUNext) {
             cPUPlay();
         }
-    }, );
+    },);
 
 
     function sleep(milliseconds: number) {
@@ -161,8 +161,15 @@ const TicTacToe = () => {
     }
 
     return (
+
         <div>
-            <div>{!winner && displayTurn()}</div>
+            {winner && (
+                <button className={styles.video_game_button} onClick={playAgainFn}>
+                    Play Again
+                </button>
+            )}
+            {winner && <h2>{displayWinner()}</h2>}
+            <div>{!winner && <h2> {displayTurn()} </h2>}</div>
             <div className={styles.container}>
                 <div className={styles.col}>
         <span onClick={() => playFn(0, 0)} className={styles.cell}>
@@ -198,12 +205,6 @@ const TicTacToe = () => {
         </span>
                 </div>
             </div>
-            {winner && <h2>{displayWinner()}</h2>}
-            {winner && (
-                <button className={styles.video_game_button2} onClick={playAgainFn}>
-                    Play Again
-                </button>
-            )}
         </div>
     )
 }
