@@ -163,11 +163,6 @@ const TicTacToe = () => {
     return (
 
         <div>
-            {winner && (
-                <button className={styles.video_game_button} onClick={resetGame}>
-                    Play Again
-                </button>
-            )}
             {winner && <h2>{displayWinner()}</h2>}
             <div>{!winner && <h2> {displayTurn()} </h2>}</div>
             <div className={styles.container}>
@@ -187,6 +182,11 @@ const TicTacToe = () => {
                     <span onClick={() => playFn(2, 2)} className={styles.cell}>{board[2][2]}</span>
                 </div>
             </div>
+            {winner && (
+                <button className={styles.video_game_button} onClick={resetGame}>
+                    Play Again
+                </button>
+            )}
         </div>
     )
 }
