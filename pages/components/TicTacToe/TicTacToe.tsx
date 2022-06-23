@@ -51,7 +51,7 @@ const TicTacToe = () => {
 
     function cPUPlay() {
         if (winner) return;
-        sleep(50);
+        sleep(100);
 
         const cPUMove = getCPUTurn();
 
@@ -163,8 +163,8 @@ const TicTacToe = () => {
     return (
 
         <div>
-            {winner && <h2>{displayWinner()}</h2>}
-            <div>{!winner && <h2> {displayTurn()} </h2>}</div>
+            {winner && <h2 className={styles.h2_center}>{displayWinner()}</h2>}
+            <div>{!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}</div>
             <div className={styles.container}>
                 <div className={styles.col}>
                     <span onClick={() => playFn(0, 0)} className={styles.cell}>{board[0][0]}</span>
