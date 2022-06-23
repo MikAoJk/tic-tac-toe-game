@@ -150,7 +150,7 @@ const TicTacToe = () => {
         }
     }
 
-    function playAgainFn() {
+    function resetGame() {
         setBoard([
             ["", "", ""],
             ["", "", ""],
@@ -164,7 +164,7 @@ const TicTacToe = () => {
 
         <div>
             {winner && (
-                <button className={styles.video_game_button} onClick={playAgainFn}>
+                <button className={styles.video_game_button} onClick={resetGame}>
                     Play Again
                 </button>
             )}
@@ -172,37 +172,19 @@ const TicTacToe = () => {
             <div>{!winner && <h2> {displayTurn()} </h2>}</div>
             <div className={styles.container}>
                 <div className={styles.col}>
-        <span onClick={() => playFn(0, 0)} className={styles.cell}>
-          {board[0][0]}
-        </span>
-                    <span onClick={() => playFn(0, 1)} className={styles.cell}>
-          {board[0][1]}
-        </span>
-                    <span onClick={() => playFn(0, 2)} className={styles.cell}>
-          {board[0][2]}
-        </span>
+                    <span onClick={() => playFn(0, 0)} className={styles.cell}>{board[0][0]}</span>
+                    <span onClick={() => playFn(0, 1)} className={styles.cell}> {board[0][1]}</span>
+                    <span onClick={() => playFn(0, 2)} className={styles.cell}>{board[0][2]}</span>
                 </div>
                 <div className={styles.col}>
-        <span onClick={() => playFn(1, 0)} className={styles.cell}>
-          {board[1][0]}
-        </span>
-                    <span onClick={() => playFn(1, 1)} className={styles.cell}>
-          {board[1][1]}
-        </span>
-                    <span onClick={() => playFn(1, 2)} className={styles.cell}>
-          {board[1][2]}
-        </span>
+                    <span onClick={() => playFn(1, 0)} className={styles.cell}>{board[1][0]}</span>
+                    <span onClick={() => playFn(1, 1)} className={styles.cell}>{board[1][1]}</span>
+                    <span onClick={() => playFn(1, 2)} className={styles.cell}>{board[1][2]}</span>
                 </div>
                 <div className={styles.col}>
-        <span onClick={() => playFn(2, 0)} className={styles.cell}>
-          {board[2][0]}
-        </span>
-                    <span onClick={() => playFn(2, 1)} className={styles.cell}>
-          {board[2][1]}
-        </span>
-                    <span onClick={() => playFn(2, 2)} className={styles.cell}>
-          {board[2][2]}
-        </span>
+                    <span onClick={() => playFn(2, 0)} className={styles.cell}>{board[2][0]}</span>
+                    <span onClick={() => playFn(2, 1)} className={styles.cell}>{board[2][1]}</span>
+                    <span onClick={() => playFn(2, 2)} className={styles.cell}>{board[2][2]}</span>
                 </div>
             </div>
         </div>
