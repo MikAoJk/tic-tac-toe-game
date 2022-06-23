@@ -24,11 +24,10 @@ const TicTacToe = () => {
     };
 
 
-    function playFn(arrayIndex: any, index: any) {
+    function playFn(arrayIndex: number, index: number) {
         if (isCPUNext) return;
         if (winner) return;
-        board[arrayIndex]
-            [index] = players?.HUMAN?.SYM;
+        board[arrayIndex][index] = players?.HUMAN?.SYM;
         setBoard((board) => [...board]);
         checkWinner();
         setIsCPUNext(true);
@@ -42,7 +41,7 @@ const TicTacToe = () => {
     }, );
 
 
-    function sleep(milliseconds: any) {
+    function sleep(milliseconds: number) {
         const date = Date.now();
         let currentDate = null;
         do {
@@ -52,7 +51,7 @@ const TicTacToe = () => {
 
     function cPUPlay() {
         if (winner) return;
-        sleep(1000);
+        sleep(50);
 
         const cPUMove = getCPUTurn();
 
@@ -201,12 +200,11 @@ const TicTacToe = () => {
             </div>
             {winner && <h2>{displayWinner()}</h2>}
             {winner && (
-                <button className={styles.video_game_button} onClick={playAgainFn}>
+                <button className={styles.video_game_button2} onClick={playAgainFn}>
                     Play Again
                 </button>
             )}
         </div>
-
     )
 }
 

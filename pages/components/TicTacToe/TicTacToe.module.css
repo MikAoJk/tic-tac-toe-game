@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+    background-color: #966F33;
     border: 2px solid black;
     font-family: "Indie Flower", cursive;
 }
@@ -25,9 +25,34 @@
     font-weight: 900;
 }
 
+.video_game_button2 {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #fff;
+    background-color: #15883e;
+    height: 48px;
+}
+
+.video_game_button2:hover {
+    background-color: #1db954;
+}
+
 .video_game_button {
     text-shadow: 1px 1px pink, -1px -1px maroon;
-
     line-height: 1.5em;
     text-align: center;
     display: inline-block;
