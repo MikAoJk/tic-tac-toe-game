@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import styles from "../styles/Home.module.css"
-import TicTacToe from "./components/TicTacToe/TicTacToe";
+import TicTacToe from "../components/TicTacToe/TicTacToe";
 
 const Home: NextPage = () => {
 

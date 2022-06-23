@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #966F33;
+    border: 2px solid black;
+    font-family: "Indie Flower", cursive;
+}
+
+.col {
+    display: flex;
+}
+
+.cell {
+    width: 89px;
+    height: 89px;
+    border: 1px solid lightgray;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xxx-large;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: white;
+    font-weight: 900;
+}
