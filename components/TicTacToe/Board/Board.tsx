@@ -9,7 +9,6 @@ interface BoardProps {
 const Board = (boardProps: BoardProps) => {
 
     return (
-        <div>
             <div className={styles.container}>
                 <div className={styles.col}>
                     <span onClick={() => boardProps.playFn(0, 0)}
@@ -36,7 +35,6 @@ const Board = (boardProps: BoardProps) => {
                           className={styles.cell}>{boardProps.board[2][2]}</span>
                 </div>
             </div>
-        </div>
     )
 }
 

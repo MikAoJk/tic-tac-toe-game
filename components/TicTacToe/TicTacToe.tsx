@@ -43,9 +43,7 @@ const TicTacToe = () => {
 
 
     const cellIsEmpty = (arrayIndex: number, index: number) => {
-        const row = board.findIndex(row => row.includes(""));
-        const col = board[row].indexOf("");
-        return row === arrayIndex && col === index;
+        return board[arrayIndex][index] === ""
     }
 
 
@@ -178,7 +176,8 @@ const TicTacToe = () => {
     }
 
     return (
-        <div>
+        <div className={styles.main}>
+            {cellAlreadyTaken && <h2 className={styles.h2_center}> Cell is already chosen, choose another one </h2>}
             {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
             <Board playFn={playFn} board={board}/>

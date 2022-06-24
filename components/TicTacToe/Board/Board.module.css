@@ -4,6 +4,9 @@
     background-color: #966F33;
     border: 2px solid black;
     font-family: "Indie Flower", cursive;
+    width: 267px;
+    align-items: center;
+    justify-content: center;
 }
 
 .col {
