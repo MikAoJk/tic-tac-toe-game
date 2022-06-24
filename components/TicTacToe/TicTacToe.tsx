@@ -13,6 +13,8 @@ const TicTacToe = () => {
         ["", "", ""],
     ]);
 
+    const [cellAlreadyTaken, setCellAlreadyTaken] = useState(false);
+
     const players = {
         CPU: {
             SYM: "O",
@@ -28,11 +30,22 @@ const TicTacToe = () => {
     function playFn(arrayIndex: number, index: number) {
         if (isCPUNext) return;
         if (winner) return;
-        board[arrayIndex][index] = players?.HUMAN?.SYM;
-        setBoard((board) => [...board]);
-        checkWinner();
-        setIsCPUNext(true);
+        if (!cellIsEmpty(arrayIndex, index)) {
+            setCellAlreadyTaken(true)
+        } else {
+            setCellAlreadyTaken(false)
+            board[arrayIndex][index] = players?.HUMAN?.SYM;
+            setBoard((board) => [...board]);
+            checkWinner();
+            setIsCPUNext(true);
+        }
     }
+
+
+    const cellIsEmpty = (arrayIndex: number, index: number) => {
+        return board[arrayIndex][index] === "";
+    }
+
 
     useEffect(() => {
         if (winner) return;
@@ -159,11 +172,12 @@ const TicTacToe = () => {
         ]);
         setWinner('');
         setIsCPUNext(false);
+        setCellAlreadyTaken(false)
     }
 
     return (
-
         <div>
+            {cellAlreadyTaken && <h2 className={styles.h2_center}> Cell is already taken, choosen a different one</h2>}
             {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
             <Board playFn={playFn} board={board}/>
