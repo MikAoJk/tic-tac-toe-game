@@ -27,7 +27,7 @@ const TicTacToe = () => {
     };
 
 
-    function playFn(arrayIndex: number, index: number) {
+    const playFn = (arrayIndex: number, index: number) => {
         if (isCPUNext) return;
         if (winner) return;
         if (!cellIsEmpty(arrayIndex, index)) {
@@ -55,7 +55,7 @@ const TicTacToe = () => {
     },);
 
 
-    function sleep(milliseconds: number) {
+    const sleep = (milliseconds: number) => {
         const date = Date.now();
         let currentDate = null;
         do {
@@ -63,7 +63,7 @@ const TicTacToe = () => {
         } while (currentDate - date < milliseconds);
     }
 
-    function cPUPlay() {
+    const cPUPlay = () => {
         if (winner) return;
         sleep(100);
 
@@ -77,7 +77,7 @@ const TicTacToe = () => {
         setIsCPUNext(false);
     }
 
-    function getCPUTurn() {
+    const getCPUTurn = () => {
         const emptyIndexes: any[] = [];
         board.forEach((row, arrayIndex) => {
             row.forEach((cell, index) => {
@@ -90,8 +90,8 @@ const TicTacToe = () => {
         return emptyIndexes[randomIndex];
     }
 
-    function checkWinner() {
-        // check same row
+    const checkWinner = () => {
+        // check on same row
         for (let index = 0; index < board.length; index++) {
             const row = board[index];
             if (row.every((cell) => cell === players?.CPU?.SYM)) {
@@ -103,7 +103,7 @@ const TicTacToe = () => {
             }
         }
 
-        // check same column
+        // check on same column
         for (let i = 0; i < 3; i++) {
             const column = board.map((row) => row[i]);
             if (column.every((cell) => cell === players?.CPU?.SYM)) {
@@ -115,7 +115,7 @@ const TicTacToe = () => {
             }
         }
 
-        // check same diagonal
+        // check on same diagonal
         const diagonal1 = [board[0]
             [0], board[1]
             [1], board[2]
@@ -148,7 +148,7 @@ const TicTacToe = () => {
         }
     }
 
-    function displayWinner() {
+    const displayWinner = () => {
         if (winner === "draw") {
             return "It's a draw!";
         } else if (winner !== "") {
@@ -156,7 +156,7 @@ const TicTacToe = () => {
         }
     }
 
-    function displayTurn() {
+    const displayTurn = () => {
         if (isCPUNext) {
             return "CPU's turn";
         } else {
@@ -164,7 +164,7 @@ const TicTacToe = () => {
         }
     }
 
-    function resetGame() {
+    const resetGame = () => {
         setBoard([
             ["", "", ""],
             ["", "", ""],
@@ -177,7 +177,7 @@ const TicTacToe = () => {
 
     return (
         <div className={styles.main}>
-            {cellAlreadyTaken && <h2 className={styles.h2_center}> Cell is already chosen, choose another one </h2>}
+            {cellAlreadyTaken && <h2 className={styles.h2_center}>Cell is taken, choose another one</h2>}
             {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
             <Board playFn={playFn} board={board}/>
