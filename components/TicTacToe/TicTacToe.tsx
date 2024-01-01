@@ -181,11 +181,13 @@ const TicTacToe = () => {
             {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
             <Board playFn={playFn} board={board}/>
-            {winner && (
+            <div>
+                {winner && (
                 <button className={styles.video_game_button} onClick={resetGame}>
                     Play Again
                 </button>
             )}
+            </div>
         </div>
     )
 }
