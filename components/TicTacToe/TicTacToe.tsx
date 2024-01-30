@@ -177,9 +177,9 @@ const TicTacToe = () => {
 
     return (
         <div className={styles.main}>
-            {cellAlreadyTaken && <h2 className={styles.h2_center}>Cell is taken, choose another one</h2>}
             {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
+            {cellAlreadyTaken && <h2 className={styles.h2_center}>Cell is taken, choose another one</h2>}
             <div>
                 {winner && (
                 <button className={styles.video_game_button} onClick={resetGame}>
