@@ -177,6 +177,7 @@ const TicTacToe = () => {
 
     return (
         <div className={styles.main}>
+            <Board playFn={playFn} board={board}/>
             {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
             {cellAlreadyTaken && <h2 className={styles.h2_center}>Cell is taken, choose another one</h2>}
@@ -187,7 +188,6 @@ const TicTacToe = () => {
                 </button>
             )}
             </div>
-            <Board playFn={playFn} board={board}/>
         </div>
     )
 }
