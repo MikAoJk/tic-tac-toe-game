@@ -4,7 +4,7 @@
     background-color: #966F33;
     border: 2px solid black;
     font-family: "Indie Flower", cursive;
-    width: 267px;
+    width: 300px;
     align-items: center;
     justify-content: center;
 }
@@ -14,8 +14,8 @@
 }
 
 .cell {
-    width: 89px;
-    height: 89px;
+    width: 100px;
+    height: 100px;
     border: 1px solid lightgray;
     text-align: center;
     display: flex;
