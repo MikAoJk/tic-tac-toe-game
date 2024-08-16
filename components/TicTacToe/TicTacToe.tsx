@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import styles from "./TicTacToe.module.css"
 import Board from "./Board/Board";
+import CellIsTakenModal from "./CellIsTakenModal";
+import PlayAgainModal from "./PlayAgainModal";
 
 
 const TicTacToe = () => {
@@ -175,19 +177,16 @@ const TicTacToe = () => {
         setCellAlreadyTaken(false)
     }
 
+    const okHandler = () => {
+        setCellAlreadyTaken(false)
+    }
+
     return (
         <div className={styles.main}>
             <Board playFn={playFn} board={board}/>
-            {winner && <h2 className={styles.h2_center}> {displayWinner()} </h2>}
+            {winner && <PlayAgainModal winnerText={displayWinner()!} onPlayAgain={resetGame}/>}
             {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
-            {cellAlreadyTaken && <h2 className={styles.h2_center}>Cell is taken, choose another one</h2>}
-            <div>
-                {winner && (
-                <button className={styles.video_game_button} onClick={resetGame}>
-                    Play Again
-                </button>
-            )}
-            </div>
+            {cellAlreadyTaken && <CellIsTakenModal onOk={okHandler}/>}
         </div>
     )
 }
