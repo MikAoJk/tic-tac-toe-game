@@ -158,14 +158,6 @@ const TicTacToe = () => {
         }
     }
 
-    const displayTurn = () => {
-        if (isCPUNext) {
-            return "CPU's turn";
-        } else {
-            return "Your turn";
-        }
-    }
-
     const resetGame = () => {
         setBoard([
             ["", "", ""],
@@ -185,7 +177,6 @@ const TicTacToe = () => {
         <div className={styles.main}>
             <Board playFn={playFn} board={board}/>
             {winner && <PlayAgainModal winnerText={displayWinner()!} onPlayAgain={resetGame}/>}
-            {!winner && <h2 className={styles.h2_center}> {displayTurn()} </h2>}
             {cellAlreadyTaken && <CellIsTakenModal onOk={okHandler}/>}
         </div>
     )
